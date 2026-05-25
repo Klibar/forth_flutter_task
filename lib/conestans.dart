@@ -2,21 +2,29 @@ import 'package:flutter/material.dart';
 
 class MyColors {
   static Color mainColor = Color(0xff53B175);
+  static Color iconColor = Color(0xffF3603F);
 }
 
 class GreenButton extends StatelessWidget {
-  const GreenButton({super.key, required this.textButton});
+  const GreenButton({
+    super.key,
+    required this.textButton,
+    required this.onPressed,
+  });
   final String textButton;
+  final onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 30.5),
-      child: Container(
-        width: 353,
-        height: 67,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: MyColors.mainColor,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          minimumSize: Size(353, 67),
+          backgroundColor: MyColors.mainColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(19),
+          ),
         ),
         child: Align(
           alignment: .center,

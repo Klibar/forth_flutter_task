@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:forth_flutter_task/conestans.dart';
+import 'package:forth_flutter_task/screens/auth/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Onbording extends StatelessWidget {
@@ -46,7 +47,15 @@ class Onbording extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 30),
-                  InkWell(child: GreenButton(textButton: 'Get Started')),
+                  GreenButton(
+                    textButton: 'Get Started',
+                    onPressed: () {
+                      Navigator.pop(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                      );
+                    },
+                  ),
                 ],
               ),
             ],
