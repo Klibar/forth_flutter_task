@@ -12,7 +12,7 @@ class GreenButton extends StatelessWidget {
     required this.onPressed,
   });
   final String textButton;
-  final onPressed;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,15 +26,12 @@ class GreenButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(19),
           ),
         ),
-        child: Align(
-          alignment: .center,
-          child: Text(
-            textButton,
-            style: TextStyle(
-              color: Color(0xffFFF9FF),
-              fontWeight: FontWeight.w600,
-              fontSize: 18,
-            ),
+        child: Text(
+          textButton,
+          style: TextStyle(
+            color: Color(0xffFFF9FF),
+            fontWeight: FontWeight.w600,
+            fontSize: 18,
           ),
         ),
       ),

@@ -4,9 +4,14 @@ import 'package:forth_flutter_task/conestans.dart';
 import 'package:forth_flutter_task/screens/auth/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Onbording extends StatelessWidget {
+class Onbording extends StatefulWidget {
   const Onbording({super.key});
 
+  @override
+  State<Onbording> createState() => _OnbordingState();
+}
+
+class _OnbordingState extends State<Onbording> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +33,7 @@ class Onbording extends StatelessWidget {
                   Container(
                     width: 255,
                     child: Text(
-                      '''Welcome to our store''',
+                      '''Welcome  to our store''',
                       style: GoogleFonts.playfairDisplay(
                         fontSize: 48,
                         fontWeight: FontWeight.w400,
@@ -50,7 +55,7 @@ class Onbording extends StatelessWidget {
                   GreenButton(
                     textButton: 'Get Started',
                     onPressed: () {
-                      Navigator.pop(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Login()),
                       );

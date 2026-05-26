@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:forth_flutter_task/conestans.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Login extends StatefulWidget {
@@ -11,61 +9,57 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
-  final _passController = TextEditingController();
-  bool _checkPass = true;
+  // final _formKey = GlobalKey<FormState>();
+  // final _emailController = TextEditingController();
+  // final _passController = TextEditingController();
+  // bool _checkPass = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(Icons.arrow_back),
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(top: 85),
-              child: Row(
-                mainAxisAlignment: .center,
-                children: [
-                  SvgPicture.asset(
-                    'assets/Group.svg',
-                    color: MyColors.iconColor,
-                  ),
-                ],
-              ),
+            SizedBox(height: 85),
+            Row(
+              mainAxisAlignment: .center,
+              children: [Image.asset('assets/Group.png')],
             ),
             SizedBox(height: 100),
             Row(
               children: [
                 Column(
+                  crossAxisAlignment: .start,
                   children: [
                     Text(
                       'Loging',
                       style: GoogleFonts.plusJakartaSans(
-                        color: Color(0xff181725),
                         fontSize: 26,
                         fontWeight: FontWeight.w600,
+                        color: Color(0xff181725),
                       ),
                     ),
-                    Text('Enter your emails and password'),
+                    SizedBox(height: 15),
+                    Text(
+                      'Enter your emails and password',
+                      style: GoogleFonts.plusJakartaSans(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff7C7C7C),
+                      ),
+                    ),
                   ],
                 ),
               ],
             ),
-            // Form(
-            //   key: _formKey,
-            //   child: Row(
-            //     children: [
-            //       Column(
-            //         children: [
-            //           Text('Email'),
-            //           TextFormField(controller: _emailController),
-            //         ],
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            SizedBox(height: 40),
           ],
         ),
       ),
