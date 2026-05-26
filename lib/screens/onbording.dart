@@ -52,14 +52,17 @@ class _OnbordingState extends State<Onbording> {
                     ),
                   ),
                   SizedBox(height: 30),
-                  GreenButton(
-                    textButton: 'Get Started',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Login()),
-                      );
-                    },
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: GreenButton(
+                      textButton: 'Get Started',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login()),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),

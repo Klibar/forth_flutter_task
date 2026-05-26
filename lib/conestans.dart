@@ -15,24 +15,19 @@ class GreenButton extends StatelessWidget {
   final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.5),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          minimumSize: Size(353, 67),
-          backgroundColor: MyColors.mainColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(19),
-          ),
-        ),
-        child: Text(
-          textButton,
-          style: TextStyle(
-            color: Color(0xffFFF9FF),
-            fontWeight: FontWeight.w600,
-            fontSize: 18,
-          ),
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        minimumSize: Size(double.infinity, 67),
+        backgroundColor: MyColors.mainColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(19)),
+      ),
+      child: Text(
+        textButton,
+        style: TextStyle(
+          color: Color(0xffFFF9FF),
+          fontWeight: FontWeight.w600,
+          fontSize: 18,
         ),
       ),
     );
