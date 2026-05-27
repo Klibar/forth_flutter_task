@@ -9,6 +9,7 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
+  int index = 4;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,6 +167,64 @@ class _AccountState extends State<Account> {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              blurRadius: 10,
+              spreadRadius: 2,
+              offset: Offset(0, -3),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+          child: BottomNavigationBar(
+            currentIndex: index,
+            onTap: (newIndex) {
+              setState(() {
+                index = newIndex;
+              });
+            },
+            selectedItemColor: Colors.green,
+            unselectedItemColor: Colors.black,
+            showSelectedLabels: true,
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.white,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.storefront),
+                label: 'Shop',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.manage_search, size: 28),
+                label: 'Explore',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart_outlined),
+                label: 'Cart',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.favorite_border),
+                label: 'Favourite',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline),
+                label: 'Account',
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
