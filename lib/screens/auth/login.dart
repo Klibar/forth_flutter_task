@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:forth_flutter_task/conestans.dart';
+import 'package:forth_flutter_task/screens/account.dart';
 import 'package:forth_flutter_task/screens/auth/signUp.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -138,7 +139,10 @@ class _LoginState extends State<Login> {
                   textButton: "Log In",
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen(),)),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Account()),
+                      );
                     }
                   },
                 ),

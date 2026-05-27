@@ -81,7 +81,7 @@ class _SignupState extends State<Signup> {
                 TextFormField(
                   controller: userController,
                   decoration: InputDecoration(
-                    hint: Text('Some_One'),
+                    hint: Text('Some One'),
                     prefixIcon: Icon(Icons.person),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Color(0xffE2E2E2)),
